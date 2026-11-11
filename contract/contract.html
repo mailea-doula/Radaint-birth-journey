@@ -171,6 +171,7 @@ h1 {
 .fees td.amt { width: 44mm; padding-left: 6mm; }
 .fees .money { display: flex; align-items: flex-end; gap: 1.5mm; font-family: var(--display); font-size: 13pt; }
 .fees .money .line { flex: 1; height: 7mm; }
+.fees .money .filled { flex: 1; font-size: 13pt; gap: 2mm; font-variant-numeric: lining-nums tabular-nums; }
 .fees .per { font-family: var(--body); font-size: 9pt; color: var(--ink-soft); }
 .fees tr.total td { border-bottom: 0.5mm solid var(--ink-faint); }
 .fees tr.total td.what strong { font-weight: 600; }
@@ -313,23 +314,23 @@ body.ipad .ipad-note {
         <p>The fees for the services described in this agreement are as follows:</p>
         <table class="fees">
           <tr>
-            <td class="what"><strong>Retaining fee</strong><small>Payable upon signing this agreement</small></td>
-            <td class="amt"><span class="money">£<span class="line" data-field="fee_retaining"></span></span></td>
+            <td class="what"><strong>Retaining fee</strong><small>Payable upon signing this agreement. Non-refundable</small></td>
+            <td class="amt"><span class="money"><span class="filled">£450</span></span></td>
           </tr>
           <tr>
             <td class="what"><strong>Second payment</strong><small>Payable at 26 weeks of pregnancy</small></td>
-            <td class="amt"><span class="money">£<span class="line" data-field="fee_26_weeks"></span></span></td>
+            <td class="amt"><span class="money"><span class="filled">£525</span></span></td>
           </tr>
           <tr>
             <td class="what"><strong>Final payment</strong><small>Payable at 36 weeks of pregnancy</small></td>
-            <td class="amt"><span class="money">£<span class="line" data-field="fee_36_weeks"></span></span></td>
+            <td class="amt"><span class="money"><span class="filled">£525</span></span></td>
           </tr>
           <tr class="total">
             <td class="what"><strong>Total fee</strong></td>
-            <td class="amt"><span class="money">£<span class="line" data-field="fee_total"></span></span></td>
+            <td class="amt"><span class="money"><span class="filled">£1,500</span></span></td>
           <tr>
             <td class="what"><strong>Additional visits</strong><small>Beyond the two antenatal visits, the birth, and one postnatal visit. Charged per hour, along with travel expenses</small></td>
-            <td class="amt"><span class="money">£<span class="line" data-field="fee_hourly"></span><span class="per">/ hr</span></span></td>
+            <td class="amt"><span class="money"><span class="filled">£25<span class="per">per hour</span></span></span></td>
           </tr>
         </table>
 
@@ -355,7 +356,7 @@ body.ipad .ipad-note {
       <div class="num">7</div>
       <div>
         <h2>Cancellation</h2>
-        <p>If the client cancels this agreement less than six weeks before the due date, the full fee applies. In the event that the doula is unable to attend the birth due to misjudgement or unavailability, only the retaining fee is payable. However, if the doula’s absence is due to circumstances beyond anyone’s control (“acts of God” or “force majeure”) or negligence on the client’s part (e.g., late notification or withholding vital information), the full fee applies.</p>
+        <p>The retaining fee is non-refundable, as it secures your dates in my diary. If the client cancels this agreement less than six weeks before the due date, the full fee applies. In the event that the doula is unable to attend the birth due to misjudgement or unavailability, only the retaining fee is payable. However, if the doula’s absence is due to circumstances beyond anyone’s control (“acts of God” or “force majeure”) or negligence on the client’s part (e.g., late notification or withholding vital information), the full fee applies.</p>
       </div>
     </div>
 
