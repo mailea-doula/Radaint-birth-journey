@@ -123,6 +123,11 @@ h1 {
   background: var(--field);
   border-radius: 0.8mm 0.8mm 0 0;
 }
+.filled {
+  display: flex; align-items: flex-end; height: 7.2mm; padding: 0 0.5mm 0.8mm;
+  border-bottom: 0.3mm solid var(--rule);
+  font-family: var(--display); font-size: 12.5pt; font-weight: 500; line-height: 1;
+}
 .inline-line {
   display: inline-block; vertical-align: baseline;
   height: 6.6mm; margin-bottom: -1.6mm;
@@ -237,9 +242,9 @@ body.ipad .ipad-note {
     <div class="parties">
       <div>
         <div class="who">The Doula</div>
-        <div class="row"><span class="label">Name</span><span class="line" data-field="doula_name"></span></div>
-        <div class="row"><span class="label">Address</span><span class="line" data-field="doula_address_1"></span></div>
-        <div class="row"><span class="line" data-field="doula_address_2"></span></div>
+        <div class="row"><span class="label">Name</span><span class="filled">Mailea Godbold</span></div>
+        <div class="row"><span class="label">Address</span><span class="filled">37 Shandon Road</span></div>
+        <div class="row"><span class="filled">Worthing, BN14 9DY</span></div>
       </div>
       <div>
         <div class="who">The Client</div>
@@ -421,7 +426,7 @@ body.ipad .ipad-note {
         <div class="row"><span class="label">Date</span><span class="line" data-field="doula_sign_date"></span></div>
       </div>
       <div class="side"></div>
-      <div class="row" style="grid-column: 1"><span class="label">Doula’s name (print)</span><span class="line" data-field="doula_print_name"></span></div>
+      <div class="row" style="grid-column: 1"><span class="label">Doula’s name (print)</span><span class="filled">Mailea Godbold</span></div>
     </div>
 
     <div class="closing">
