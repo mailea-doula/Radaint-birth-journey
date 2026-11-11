@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Radiant Birth Journey – Birth Doula Agreement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: fixed A4 sheets (one .page per printed page) so the iPad build can place
+   form fields at exact positions. Mode is set by ?mode=print | ?mode=ipad. */
+:root {
+  --ink: #583B1F;          /* logo brown */
+  --ink-soft: #7D6049;     /* secondary text */
+  --ink-faint: #A88E78;    /* captions, hints */
+  --rule: #D9C6B4;         /* hairlines */
+  --paper: #FFFFFF;        /* print: plain paper, no ink wasted */
+  --panel: #FBF4EE;        /* soft panel fill */
+  --field: transparent;    /* fill behind fill-in lines */
+  --display: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --body: "EB Garamond", Garamond, "Times New Roman", serif;
+}
+body.ipad {
+  --paper: #FDF3EA;        /* logo cream */
+  --panel: #F8E9DC;
+  --field: rgba(232, 212, 193, 0.38);
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #E9E1D9;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 10.5pt;
+  line-height: 1.47;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-variant-ligatures: common-ligatures;
+}
+@media print { body { background: none; } .page { margin: 0 !important; box-shadow: none !important; } }
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 10mm auto;
+  padding: 15mm 20mm 23mm;
+  background: var(--paper);
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(60, 40, 20, .15);
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.content { flex: 1; display: flex; flex-direction: column; gap: 4.2mm; }
+
+/* ---------- running header & footer ---------- */
+.runhead {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 2.5mm; margin-bottom: 4.5mm;
+  border-bottom: 0.3mm solid var(--rule);
+}
+.runhead img { height: 9mm; }
+.runhead span, .foot, .eyebrow, .label {
+  font-family: var(--body);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 7.2pt;
+  color: var(--ink-soft);
+}
+.foot {
+  position: absolute; left: 20mm; right: 20mm; bottom: 10mm;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 8mm;
+  padding-top: 3mm; border-top: 0.3mm solid var(--rule);
+}
+.foot .initials { display: flex; align-items: flex-end; gap: 2.5mm; }
+.foot .initials .box {
+  width: 16mm; height: 8mm; border: 0.3mm solid var(--rule); border-radius: 1mm;
+  background: var(--field);
+}
+.foot .pg { font-variant-numeric: tabular-nums; }
+
+/* ---------- cover block ---------- */
+.masthead { display: flex; justify-content: space-between; align-items: flex-start; gap: 10mm; }
+.masthead img { width: 74mm; margin-left: -2mm; }
+.masthead .meta { text-align: right; padding-top: 4mm; display: flex; flex-direction: column; gap: 1.5mm; }
+.masthead .meta .label { color: var(--ink-faint); }
+.masthead .meta .ref { font-family: var(--display); font-style: italic; font-size: 11pt; color: var(--ink-soft); }
+
+h1 {
+  font-family: var(--display); font-weight: 500;
+  font-size: 30pt; line-height: 1.05; letter-spacing: 0.01em;
+  margin: 7mm 0 0;
+}
+.subtitle {
+  font-family: var(--display); font-style: italic; font-size: 13.5pt; color: var(--ink-soft);
+  margin: 1.5mm 0 0;
+}
+
+.parties {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 0.3mm solid var(--rule); border-radius: 1.6mm;
+  background: var(--panel);
+  margin-top: 3mm;
+}
+.parties > div { padding: 4.5mm 5.5mm 5mm; display: flex; flex-direction: column; gap: 3.2mm; }
+.parties > div + div { border-left: 0.3mm solid var(--rule); }
+.parties .who { font-family: var(--display); font-size: 14pt; font-weight: 600; line-height: 1; }
+.parties .who em { font-weight: 400; font-size: 11pt; color: var(--ink-soft); margin-left: 1.5mm; }
+.parties .span { grid-column: 1 / -1; border-top: 0.3mm solid var(--rule); border-left: 0 !important;
+  flex-direction: row; align-items: flex-end; gap: 8mm; padding-top: 4mm; padding-bottom: 4.5mm; }
+.parties .span .row { flex: 1; }
+
+/* fill-in line: label above, ruled line below */
+.row { display: flex; flex-direction: column; gap: 0.6mm; min-width: 0; }
+.row .label { font-size: 6.6pt; color: var(--ink-faint); }
+.line {
+  display: block; height: 7.2mm;
+  border-bottom: 0.3mm solid var(--ink-faint);
+  background: var(--field);
+  border-radius: 0.8mm 0.8mm 0 0;
+}
+.inline-line {
+  display: inline-block; vertical-align: baseline;
+  height: 6.6mm; margin-bottom: -1.6mm;
+  border-bottom: 0.3mm solid var(--ink-faint);
+  background: var(--field);
+  border-radius: 0.8mm 0.8mm 0 0;
+}
+
+.lede { font-size: 11pt; margin: 1mm 0 0; }
+
+/* ---------- clauses ---------- */
+.clause { display: grid; grid-template-columns: 11mm 1fr; column-gap: 2mm; }
+.clause .num {
+  font-family: var(--display); font-size: 19pt; line-height: 1; color: var(--ink-faint);
+  font-variant-numeric: lining-nums; padding-top: 0.6mm;
+}
+.clause h2 {
+  font-family: var(--display); font-weight: 600; font-size: 14.5pt; line-height: 1.15;
+  margin: 0 0 1.2mm; letter-spacing: 0.005em;
+}
+.clause p { margin: 0 0 2mm; text-align: left; }
+.clause p:last-child { margin-bottom: 0; }
+.aside {
+  margin: 2mm 0 0; padding: 3mm 4.5mm;
+  border-left: 0.6mm solid var(--rule);
+  background: var(--panel);
+  border-radius: 0 1.4mm 1.4mm 0;
+}
+.aside h3 {
+  font-family: var(--body); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em;
+  font-size: 7.4pt; color: var(--ink-soft); margin: 0 0 1.5mm;
+}
+.aside p { margin: 0 0 1.8mm; }
+
+/* fees */
+.fees { width: 100%; border-collapse: collapse; margin: 1mm 0 2.5mm; font-variant-numeric: tabular-nums; }
+.fees td { padding: 1.5mm 0; border-bottom: 0.3mm solid var(--rule); vertical-align: bottom; }
+.fees tr:first-child td { border-top: 0.3mm solid var(--rule); }
+.fees td.what strong { font-weight: 500; }
+.fees td.what small { display: block; color: var(--ink-soft); font-size: 9.2pt; font-style: italic; }
+.fees td.amt { width: 44mm; padding-left: 6mm; }
+.fees .money { display: flex; align-items: flex-end; gap: 1.5mm; font-family: var(--display); font-size: 13pt; }
+.fees .money .line { flex: 1; height: 7mm; }
+.fees .per { font-family: var(--body); font-size: 9pt; color: var(--ink-soft); }
+.fees tr.total td { border-bottom: 0.5mm solid var(--ink-faint); }
+.fees tr.total td.what strong { font-weight: 600; }
+
+/* ---------- signatures ---------- */
+.declare {
+  font-family: var(--display); font-size: 14pt; line-height: 1.4; font-style: italic;
+  padding: 5mm 6mm; background: var(--panel); border-radius: 1.6mm; border: 0.3mm solid var(--rule);
+}
+.declare p { margin: 0; }
+.declare p + p { margin-top: 1.5mm; }
+.sig { display: grid; grid-template-columns: 1fr 52mm; gap: 3mm 7mm; align-items: end; }
+.sig h2 {
+  grid-column: 1 / -1; margin: 0;
+  font-family: var(--display); font-weight: 600; font-size: 14.5pt;
+  display: flex; align-items: baseline; gap: 2.5mm;
+}
+.sig h2 em { font-weight: 400; font-size: 10.5pt; color: var(--ink-soft); }
+.sigbox {
+  grid-row: span 2;
+  height: 21mm; position: relative;
+  border-bottom: 0.4mm solid var(--ink-soft);
+  background: var(--field);
+  border-radius: 1.2mm 1.2mm 0 0;
+}
+.sigbox::before {
+  content: "×"; position: absolute; left: 2mm; bottom: 1.5mm;
+  font-family: var(--display); font-size: 16pt; color: var(--ink-faint); line-height: 1;
+}
+.sigbox .hint {
+  position: absolute; right: 3mm; top: 2.5mm;
+  font-size: 6.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint);
+}
+body.print .sigbox .hint { display: none; }
+.sigcap { grid-column: 1; font-size: 6.6pt; color: var(--ink-faint); letter-spacing: .16em; text-transform: uppercase; margin-top: -1.5mm; }
+.sig .side { display: flex; flex-direction: column; gap: 3mm; }
+.sig + .sig { padding-top: 4mm; border-top: 0.3mm solid var(--rule); }
+
+.closing { margin-top: auto; display: flex; align-items: center; gap: 5mm; color: var(--ink-soft); font-size: 9.4pt; }
+.closing img { width: 13mm; opacity: .85; }
+.closing p { margin: 0; }
+
+/* how-to note shown on the iPad copy only */
+.ipad-note { display: none; }
+body.ipad .ipad-note {
+  display: flex; gap: 3mm; align-items: baseline;
+  font-size: 8.6pt; color: var(--ink-soft); font-style: italic;
+}
+</style>
+</head>
+<body class="print">
+
+<!-- ============================== PAGE 1 ============================== -->
+<section class="page">
+  <div class="content">
+    <div class="masthead">
+      <img src="assets/logo-full.png" alt="Radiant Birth Journey">
+      <div class="meta">
+        <span class="label">Birth doula services</span>
+        <span class="ref">Client agreement</span>
+      </div>
+    </div>
+
+    <div>
+      <h1>Letter of Agreement</h1>
+      <p class="subtitle">Outlining the extent and boundaries of services</p>
+    </div>
+
+    <div class="parties">
+      <div>
+        <div class="who">The Doula</div>
+        <div class="row"><span class="label">Name</span><span class="line" data-field="doula_name"></span></div>
+        <div class="row"><span class="label">Address</span><span class="line" data-field="doula_address_1"></span></div>
+        <div class="row"><span class="line" data-field="doula_address_2"></span></div>
+      </div>
+      <div>
+        <div class="who">The Client</div>
+        <div class="row"><span class="label">Name</span><span class="line" data-field="client_name"></span></div>
+        <div class="row"><span class="label">Address</span><span class="line" data-field="client_address"></span></div>
+        <div class="row"><span class="label">Phone &amp; email</span><span class="line" data-field="client_contact"></span></div>
+      </div>
+      <div class="span">
+        <div class="row"><span class="label">Birth partner</span><span class="line" data-field="partner_name"></span></div>
+        <div class="row"><span class="label">Baby’s estimated due date</span><span class="line" data-field="due_date"></span></div>
+        <div class="row"><span class="label">Date of agreement</span><span class="line" data-field="agreement_date"></span></div>
+      </div>
+    </div>
+
+    <p class="lede">This Letter of Agreement is made between the person named above as the Doula (referred to as “Doula”) and the person named above as the Client (referred to as “Client”).</p>
+
+    <div class="clause">
+      <div class="num">1</div>
+      <div>
+        <h2>Services Provided</h2>
+        <p>As a doula, I provide comprehensive support to women and birthing people throughout their birth journey. This includes birth preparation, emotional support, and assistance during labour, birth, and bonding. Please note that I do not provide medical advice, perform clinical tasks, or make decisions on your behalf. My role is to provide guidance, a nurturing presence, and support to help you advocate for yourself during this transformative experience.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">2</div>
+      <div>
+        <h2>Initial Meetings and Communication</h2>
+        <p>To ensure a personalised and effective support system, we will meet twice before labour. During our initial meeting, we will focus on getting to know each other, discussing your birth priorities, addressing any concerns or fears, and establishing a working relationship. Our second meeting will involve birth preparation, where I will share comfort measures, coping techniques, and strategies for you and your birth partner. Regular communication via phone and email will be maintained to track progress and address any questions or uncertainties that arise.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Radiant Birth Journey · Letter of Agreement</span><span class="initials">Client initials <span class="box"></span></span><span class="pg">Page 1 of 4</span></div>
+</section>
+
+<!-- ============================== PAGE 2 ============================== -->
+<section class="page">
+  <div class="runhead"><img src="assets/logo-full.png" alt=""><span>Letter of Agreement</span></div>
+  <div class="content">
+    <div class="clause">
+      <div class="num">3</div>
+      <div>
+        <h2>Support during Birth</h2>
+        <p>In the event of labour, it is essential that you notify me as soon as you believe you may be going into labour or if you are already experiencing labour signs. We will assess the situation over the phone and decide on the best course of action together. Unless there is an urgent situation or the baby arrives unexpectedly, I prefer to meet you at your chosen birthing location. Please understand that it may take up to 90 minutes for me to arrive, depending on the distance and circumstances.</p>
+        <div class="aside">
+          <h3>Planned caesarean birth</h3>
+          <p>If you are planning an elective caesarean birth, where the date and time are predetermined, I will provide support leading up to the scheduled surgery and during the immediate postoperative period. Please note that the full fee as outlined in this agreement still applies, regardless of the type of birth or any interventions involved.</p>
+          <p>It is important to be aware that some hospitals have policies limiting the number of individuals allowed in the operating theatre during a caesarean birth. Typically, only one birth partner is permitted to be present. While I will make every effort to accompany you and provide support in the theatre, there may be circumstances beyond my control where the hospital policies prevent my presence on the day of the procedure.</p>
+          <p>If such a situation arises, I will continue to offer emotional support and guidance leading up to the surgery. Once you are reunited with your baby, I will be available to assist with bonding, breastfeeding, and any postoperative needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">4</div>
+      <div>
+        <h2>Postnatal Visit</h2>
+        <p>Within one to two weeks after the birth, we will schedule a postnatal visit. During this visit, we will assess your wellbeing, celebrate the arrival of your baby, and provide an opportunity for you and your partner to share your birth story. I will also be available for consultation by phone during the first six weeks after birth to address any concerns or provide additional support as needed.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">5</div>
+      <div>
+        <h2>Fees</h2>
+        <p>The fees for the services described in this agreement are as follows:</p>
+        <table class="fees">
+          <tr>
+            <td class="what"><strong>Retaining fee</strong><small>Payable upon signing this agreement</small></td>
+            <td class="amt"><span class="money">£<span class="line" data-field="fee_retaining"></span></span></td>
+          </tr>
+          <tr>
+            <td class="what"><strong>Second payment</strong><small>Payable at 26 weeks of pregnancy</small></td>
+            <td class="amt"><span class="money">£<span class="line" data-field="fee_26_weeks"></span></span></td>
+          </tr>
+          <tr>
+            <td class="what"><strong>Final payment</strong><small>Payable at 36 weeks of pregnancy</small></td>
+            <td class="amt"><span class="money">£<span class="line" data-field="fee_36_weeks"></span></span></td>
+          </tr>
+          <tr class="total">
+            <td class="what"><strong>Total fee</strong></td>
+            <td class="amt"><span class="money">£<span class="line" data-field="fee_total"></span></span></td>
+          <tr>
+            <td class="what"><strong>Additional visits</strong><small>Beyond the two antenatal visits, the birth, and one postnatal visit. Charged per hour, along with travel expenses</small></td>
+            <td class="amt"><span class="money">£<span class="line" data-field="fee_hourly"></span><span class="per">/ hr</span></span></td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Radiant Birth Journey · Letter of Agreement</span><span class="initials">Client initials <span class="box"></span></span><span class="pg">Page 2 of 4</span></div>
+</section>
+
+<!-- ============================== PAGE 3 ============================== -->
+<section class="page">
+  <div class="runhead"><img src="assets/logo-full.png" alt=""><span>Letter of Agreement</span></div>
+  <div class="content">
+    <div class="clause">
+      <div class="num">6</div>
+      <div>
+        <h2>Client Responsibilities</h2>
+        <p>The client agrees to provide accurate and timely information regarding their pregnancy, labour, and any changes in circumstances. The client also acknowledges that if they wish to use natural remedies during pregnancy, labour, and early parenting, it is their responsibility to consult with a professional therapist. If the client requests the doula to administer any natural remedies, this must be clearly stated in the Birth Preferences.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">7</div>
+      <div>
+        <h2>Cancellation</h2>
+        <p>If the client cancels this agreement less than six weeks before the due date, the full fee applies. In the event that the doula is unable to attend the birth due to misjudgement or unavailability, only the retaining fee is payable. However, if the doula’s absence is due to circumstances beyond anyone’s control (“acts of God” or “force majeure”) or negligence on the client’s part (e.g., late notification or withholding vital information), the full fee applies.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">8</div>
+      <div>
+        <h2>Working with Your Healthcare Team</h2>
+        <p>My role is to walk alongside you, helping you to understand the information you are given, reflect on your options, and feel confident communicating your wishes directly to your midwife, doctor, or other healthcare professionals. Please note that I do not act as a mediator, spokesperson, or decision maker on your behalf, nor as a buffer between you and the maternity care system. Communication and clinical decision-making remain between you and your care providers.</p>
+        <p>Keeping in regular contact with your healthcare team is a central part of your maternity care. My support is offered alongside this relationship and is not a replacement for it.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="num">9</div>
+      <div>
+        <h2>Responsibility and Outcomes</h2>
+        <p>By signing this agreement, you acknowledge that all clinical decisions and medical outcomes relating to your pregnancy, labour, birth, and postnatal care rest with you and your healthcare providers. Please understand that, as your doula, I cannot be held responsible for medical decisions, clinical outcomes, or the actions or omissions of healthcare professionals.</p>
+      </div>
+    </div>
+
+    <div class="closing">
+      <img src="assets/logo-mark.png" alt="">
+      <p>Thank you for inviting me to be part of your birth journey. Please read each section carefully and ask me about anything you would like explained before signing overleaf.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Radiant Birth Journey · Letter of Agreement</span><span class="initials">Client initials <span class="box"></span></span><span class="pg">Page 3 of 4</span></div>
+</section>
+
+<!-- ============================== PAGE 4 ============================== -->
+<section class="page">
+  <div class="runhead"><img src="assets/logo-full.png" alt=""><span>Letter of Agreement</span></div>
+  <div class="content" style="gap: 4.5mm">
+    <div>
+      <h1 style="font-size: 24pt; margin-top: 0">Agreement &amp; Signatures</h1>
+    </div>
+    <div class="declare">
+      <p>I/We have read and understood this agreement, which reflects the discussions we had with the doula.</p>
+      <p>I/We agree to the contents of this agreement.</p>
+    </div>
+    <p class="ipad-note">To sign on iPad: tap the Markup pen, choose a pen with your Apple Pencil, and sign inside each shaded box. Tap a ruled line to type.</p>
+
+    <div class="sig">
+      <h2>Client</h2>
+      <div class="sigbox"><span class="hint">Sign here</span></div>
+      <div class="side">
+        <div class="row"><span class="label">Date</span><span class="line" data-field="client_sign_date"></span></div>
+      </div>
+      <div class="side">
+        <div class="row"><span class="label">Baby’s due date</span><span class="line" data-field="client_sign_due"></span></div>
+      </div>
+      <div class="row" style="grid-column: 1"><span class="label">Client’s name (print)</span><span class="line" data-field="client_print_name"></span></div>
+    </div>
+
+    <div class="sig">
+      <h2>Birth Partner <em>if applicable</em></h2>
+      <div class="sigbox"><span class="hint">Sign here</span></div>
+      <div class="side">
+        <div class="row"><span class="label">Date</span><span class="line" data-field="partner_sign_date"></span></div>
+      </div>
+      <div class="side"></div>
+      <div class="row" style="grid-column: 1"><span class="label">Partner’s name (print)</span><span class="line" data-field="partner_print_name"></span></div>
+    </div>
+
+    <div class="sig">
+      <h2>Doula</h2>
+      <div class="sigbox"><span class="hint">Sign here</span></div>
+      <div class="side">
+        <div class="row"><span class="label">Date</span><span class="line" data-field="doula_sign_date"></span></div>
+      </div>
+      <div class="side"></div>
+      <div class="row" style="grid-column: 1"><span class="label">Doula’s name (print)</span><span class="line" data-field="doula_print_name"></span></div>
+    </div>
+
+    <div class="closing">
+      <img src="assets/logo-mark.png" alt="">
+      <p>Each party keeps a signed copy of this agreement.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Radiant Birth Journey · Letter of Agreement</span><span class="initials">Client initials <span class="box"></span></span><span class="pg">Page 4 of 4</span></div>
+</section>
+
+<script>
+  var mode = new URLSearchParams(location.search).get("mode");
+  if (mode === "ipad") document.body.className = "ipad";
+</script>
+</body>
+</html>
